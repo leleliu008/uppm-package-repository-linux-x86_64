@@ -67,6 +67,9 @@ do
             ;;
         core/bin/ndisasm)
             ;;
+        core/bin/rsync-ssl)
+            run $item --help
+            ;;
         *)
             run $item --help
             run $item --version
