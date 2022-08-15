@@ -64,6 +64,10 @@ do
             ;;
         gnu-binutils-*.tar.xz)
             ;;
+        libarchive-*.tar.xz)
+            ;;
+        cmake-*.tar.xz)
+            ;;
         *)  tar vxf "$item" --strip-components=1 -C "$RELEASE_DIRNAME"
     esac
 done
