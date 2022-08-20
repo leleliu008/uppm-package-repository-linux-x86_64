@@ -23,6 +23,8 @@ done
 
 run core/bin/tree --dirsfirst -L 2
 
+export XMAKE_ROOT=y
+
 export GIT_EXEC_PATH="$PWD/core/libexec/git-core"
 
 export PATH="$PWD/core/bin:$PATH"
