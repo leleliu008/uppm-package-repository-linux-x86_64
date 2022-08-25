@@ -78,6 +78,9 @@ do
         core/bin/optscript)
             run $item --help
             ;;
+        core/bin/gpgparsemail)
+            run $item --help
+            ;;
         *)
             run $item --help
             run $item --version
