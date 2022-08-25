@@ -73,10 +73,10 @@ do
             run $item --help
             ;;
         core/bin/readtags)
-            run $item --version
+            run $item --help
             ;;
         core/bin/optscript)
-            run $item --version
+            run $item --help
             ;;
         *)
             run $item --help
