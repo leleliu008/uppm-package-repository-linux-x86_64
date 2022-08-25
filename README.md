@@ -1,6 +1,6 @@
 # ppkg-core-linux-x86_64
 
-these tools are used by [ppkg](https://github.com/leleliu008/ppkg) shell script.
+these tools are created by [ppkg](https://github.com/leleliu008/ppkg).
 
 these tools are statically linked against [musl-libc](https://musl.libc.org/).
 
