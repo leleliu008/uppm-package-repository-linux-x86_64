@@ -72,6 +72,12 @@ do
         core/bin/rsync-ssl)
             run $item --help
             ;;
+        core/bin/readtags)
+            run $item --version
+            ;;
+        core/bin/optscript)
+            run $item --version
+            ;;
         *)
             run $item --help
             run $item --version
