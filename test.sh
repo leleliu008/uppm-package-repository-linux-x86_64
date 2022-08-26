@@ -142,6 +142,8 @@ do
             ;;
         core/sbin/applygnupgdefaults)
             ;;
+        core/sbin/nologin)
+            ;;
         *)
             run $item --help
             run $item --version
