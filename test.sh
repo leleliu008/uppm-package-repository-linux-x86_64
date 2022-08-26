@@ -104,6 +104,10 @@ do
             run $item --help
             run $item -v
             ;;
+        core/bin/youtubedr)
+            run $item --help
+            run $item version
+            ;;
         *)
             run $item --help
             run $item --version
