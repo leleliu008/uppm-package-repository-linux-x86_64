@@ -93,6 +93,8 @@ do
         core/bin/psftp)
             run $item --version
             ;;
+        core/bin/mosh)
+            ;;
         *)
             run $item --help
             run $item --version
