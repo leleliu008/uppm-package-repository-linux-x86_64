@@ -98,6 +98,8 @@ do
             ;;
         core/bin/mosh)
             ;;
+        core/bin/tmux)
+            ;;
         core/bin/unrar)
             ;;
         core/bin/qjs)
