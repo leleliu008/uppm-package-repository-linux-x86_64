@@ -84,6 +84,9 @@ do
         core/bin/strace-log-merge)
             run $item --help
             ;;
+        core/bin/darkhttpd)
+            run $item --help
+            ;;
         core/bin/plink)
             run $item --version
             ;;
