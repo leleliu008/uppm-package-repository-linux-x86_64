@@ -128,6 +128,9 @@ do
         core/bin/mpg123-id3dump)
             run $item --help
             ;;
+        core/bin/rtmpdump)
+            run $item --help
+            ;;
         core/sbin/rtmpgw)
             run $item --help
             ;;
