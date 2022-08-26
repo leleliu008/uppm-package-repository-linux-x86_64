@@ -144,10 +144,10 @@ do
             ;;
         core/sbin/nologin)
             ;;
-        core/sbin/zlib-flate)
+        core/bin/zlib-flate)
             run $item --version
             ;;
-        core/sbin/fix-qdf)
+        core/bin/fix-qdf)
             run $item --version
             ;;
         *)
