@@ -81,6 +81,9 @@ do
         core/bin/gpgparsemail)
             run $item --help
             ;;
+        core/bin/strace-log-merge)
+            run $item --help
+            ;;
         *)
             run $item --help
             run $item --version
