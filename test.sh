@@ -98,6 +98,10 @@ do
             ;;
         core/bin/mosh)
             ;;
+        core/bin/ctop)
+            run $item --help
+            run $item -v
+            ;;
         *)
             run $item --help
             run $item --version
