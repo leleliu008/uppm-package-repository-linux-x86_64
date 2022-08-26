@@ -106,6 +106,8 @@ do
             ;;
         core/bin/qjscalc)
             ;;
+        core/bin/curlie)
+            ;;
         core/bin/ctop)
             run $item --help
             run $item -v
