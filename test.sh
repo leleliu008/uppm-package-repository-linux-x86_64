@@ -138,6 +138,10 @@ do
             ;;
         core/sbin/rtmpsuck)
             ;;
+        core/sbin/addgnupghome)
+            ;;
+        core/sbin/applygnupgdefaults)
+            ;;
         *)
             run $item --help
             run $item --version
