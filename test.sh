@@ -31,7 +31,7 @@ export PATH="$PWD/core/bin:$PATH"
 
 printf '%s\n' "$PATH" | tr ':' '\n'
 
-for item in core/bin/*
+for item in core/bin/* core/sbin/*
 do
     case $item in
         core/bin/c_rehash)
@@ -127,6 +127,13 @@ do
             ;;
         core/bin/mpg123-id3dump)
             run $item --help
+            ;;
+        core/sbin/rtmpgw)
+            run $item --help
+            ;;
+        core/sbin/rtmpsrv)
+            ;;
+        core/sbin/rtmpsuck)
             ;;
         *)
             run $item --help
