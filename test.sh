@@ -114,6 +114,12 @@ do
             run $item --help
             run $item version
             ;;
+        core/bin/mpg123-strip)
+            run $item --help
+            ;;
+        core/bin/mpg123-id3dump)
+            run $item --help
+            ;;
         *)
             run $item --help
             run $item --version
