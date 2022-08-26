@@ -84,6 +84,15 @@ do
         core/bin/strace-log-merge)
             run $item --help
             ;;
+        core/bin/plink)
+            run $item --version
+            ;;
+        core/bin/pscp)
+            run $item --version
+            ;;
+        core/bin/psftp)
+            run $item --version
+            ;;
         *)
             run $item --help
             run $item --version
