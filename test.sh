@@ -100,6 +100,12 @@ do
             ;;
         core/bin/unrar)
             ;;
+        core/bin/qjs)
+            ;;
+        core/bin/qjsc)
+            ;;
+        core/bin/qjscalc)
+            ;;
         core/bin/ctop)
             run $item --help
             run $item -v
