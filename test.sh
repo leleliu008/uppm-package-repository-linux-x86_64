@@ -98,6 +98,8 @@ do
             ;;
         core/bin/mosh)
             ;;
+        core/bin/unrar)
+            ;;
         core/bin/ctop)
             run $item --help
             run $item -v
