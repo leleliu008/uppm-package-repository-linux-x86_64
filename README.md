@@ -1,4 +1,4 @@
-# ppkg-core-linux-x86_64
+# uppm-package-repository-linux-x86_64
 
 these tools are created by [ppkg](https://github.com/leleliu008/ppkg).
 
@@ -16,9 +16,4 @@ export GIT_TEMPLATE_DIR="$PPKG_CORE_INSTALL_DIR/share/git-core/templates"
 following environment variables should be set for `file`:
 ```bash
 export MAGIC="$PPKG_CORE_INSTALL_DIR/share/misc/magic.mgc"
-```
-
-following environment variables should be set for `gnu-binutils`:
-```bash
-export LDFLAGS="$LDFLAGS -fno-use-linker-plugin"
 ```
