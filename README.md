@@ -1,10 +1,10 @@
 # uppm-package-repository-linux-x86_64
 
-these tools are created by [ppkg](https://github.com/leleliu008/ppkg).
+these packages are created by [ppkg](https://github.com/leleliu008/ppkg).
 
-these tools are statically linked against [musl-libc](https://musl.libc.org/).
+these packages are statically linked against [musl-libc](https://musl.libc.org/).
 
-these tools are relocatable which means that you can install them to anywhere.
+these packages are relocatable which means that you can install them to anywhere.
 
 ## Environment Variables
 following environment variables should be set for `git`:
