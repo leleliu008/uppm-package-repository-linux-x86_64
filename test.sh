@@ -16,7 +16,7 @@ run() {
 
 mkdir core
 
-for item in *.tar.xz
+for item in package/*.tar.xz
 do
     run tar vxf $item --strip-components=1 -C core
 done
