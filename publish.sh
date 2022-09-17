@@ -152,6 +152,6 @@ TEMP_DIR=$(mktemp -d)
 
 run tar vxf package/gtar-*-linux-x86_64.tar.xz -C "$TEMP_DIR" --strip-components=1
 run tar vxf package/gzip-*-linux-x86_64.tar.xz -C "$TEMP_DIR" --strip-components=1
-run tar vxf package/xz-*-linux-x86_64.tar.xz -C   "$TEMP_DIR" --strip-components=1
+run tar vxf package/xz-*-linux-x86_64.tar.xz   -C "$TEMP_DIR" --strip-components=1
 
-#run gh release create "$RELEASE_VERSION" "$TEMP_DIR/bin/tar" "$TEMP_DIR/bin/gzip" "$TEMP_DIR/bin/xz" package/*.tar.xz --notes-file "$RELEASE_NOTES_FILE"
+run gh release create "$RELEASE_VERSION" "$TEMP_DIR/bin/tar" "$TEMP_DIR/bin/gzip" "$TEMP_DIR/bin/xz" package/*.tar.xz --notes-file "$RELEASE_NOTES_FILE"
