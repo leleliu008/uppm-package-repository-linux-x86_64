@@ -150,6 +150,9 @@ do
         core/bin/fix-qdf)
             run $item --version
             ;;
+        core/bin/xxd)
+            run $item --version
+            ;;
         *)
             run $item --help
             run $item --version
