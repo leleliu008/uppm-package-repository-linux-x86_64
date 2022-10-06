@@ -153,7 +153,7 @@ do
         core/bin/xxd)
             run $item --version
             ;;
-        core/sbin/bmake)
+        core/bin/bmake)
             ;;
         *)
             run $item --help
