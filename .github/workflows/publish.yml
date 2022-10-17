@@ -10,7 +10,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
 
-    container: alpine:3.15
+    container: alpine:3.16
 
     env:
       GH_PRIVATE_TOKEN: ${{ secrets.GH_PRIVATE_TOKEN }}
