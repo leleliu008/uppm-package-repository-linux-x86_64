@@ -155,6 +155,8 @@ do
             ;;
         core/bin/bmake)
             ;;
+        core/bin/zstdgrep)
+            ;;
         *)
             run $item --help
             run $item --version
