@@ -15,15 +15,12 @@ jobs:
     env:
       ACLOCAL_PATH: /usr/share/aclocal
       GH_PRIVATE_TOKEN: ${{ secrets.GH_PRIVATE_TOKEN }}
-      PKG_NAMES: aria2 axel bash bat binutils bison bmake bzip2 cmake coreutils cppcheck ctop curlie curl darkhttpd diffutils dos2unix ed file findutils flex gawk git glow gm4 gmake gnupg gh gn gogs gotop gotty gperf grep gsed gtar gzip hugo jq lazygit libarchive lzip mediainfo mosh mpg123 nasm ninja openssl patchelf patch pkg-config pngquant proot putty qpdf quickjs rsync rtmpdump sqlite starship strace tcpdump tealdeer tig tmux tree uctags unrar unzip uppm util-linux wget xmake xxd xz yasm youtubedr yq
+      PKG_NAMES: aria2 axel bash bat bison bmake bzip2 cmake coreutils cppcheck ctop curlie curl darkhttpd diffutils dos2unix ed file findutils flex gawk git glow gm4 gmake gnupg gh gn gogs gotop gotty gperf grep gsed gtar gzip hugo jq lazygit libarchive lzip lz4 mediainfo mosh mpg123 nasm ninja openssl patchelf patch pkg-config pngquant proot putty pigz qpdf quickjs rsync rtmpdump sqlite starship strace tcpdump tealdeer tig tmux tree uctags unrar unzip uppm util-linux wget xmake xxd xz yasm youtubedr yq zopfli zstd
 
     steps:
       - uses: actions/checkout@v3
 
-      - run: apk update
-      - run: apk add curl g++ libc-dev linux-headers
-
-      - run: curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/master/bin/ppkg
+      - run: wget https://raw.githubusercontent.com/leleliu008/ppkg/master/bin/ppkg
       - run: chmod a+x ppkg
       - run: ./ppkg setup --use-system-package-manager
       - run: ./ppkg update
