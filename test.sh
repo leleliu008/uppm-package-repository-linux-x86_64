@@ -157,6 +157,19 @@ do
             ;;
         core/bin/zstdgrep)
             ;;
+        core/bin/zipnote)
+            ;;
+        core/bin/zipsplit)
+            ;;
+        core/bin/7z)
+            run $item --help
+            ;;
+        core/bin/7za)
+            run $item --help
+            ;;
+        core/bin/7zr)
+            run $item --help
+            ;;
         *)
             run $item --help
             run $item --version
