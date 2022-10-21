@@ -36,7 +36,7 @@ jobs:
       - run: git config --global user.email leleliu008@gmail.com
 
       - run: git -c init.defaultBranch=master init
-      - run: git remote add origin ${{ github.repositoryUrl }}
+      - run: git remote add origin https://github.com/${{ github.repository }}
       - run: git fetch origin master
       - run: git checkout master
 
