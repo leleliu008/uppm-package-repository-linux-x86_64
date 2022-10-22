@@ -21,7 +21,7 @@ do
     run tar vxf $item --strip-components=1 -C core
 done
 
-if [ -e core/sbin/true ] ; then
+if [ ! -e core/sbin/true ] ; then
     mkdir -p core/sbin
     printf '%s\n' '#!/bin/sh' > core/sbin/true
     chmod +x core/sbin/true
