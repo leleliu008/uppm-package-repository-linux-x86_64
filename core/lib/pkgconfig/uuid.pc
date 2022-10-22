@@ -1,0 +1,11 @@
+prefix=/home/leleliu008/.ppkg/install.d/util-linux
+exec_prefix=/home/leleliu008/.ppkg/install.d/util-linux
+libdir=/home/leleliu008/.ppkg/install.d/util-linux/lib
+includedir=/home/leleliu008/.ppkg/install.d/util-linux/include
+
+Name: uuid
+Description: Universally unique id library
+Version: 2.38.0
+Requires:
+Cflags: -I${includedir}/uuid
+Libs: -L${libdir} -luuid

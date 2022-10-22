@@ -1,0 +1,7 @@
+os-kind: linux
+os-type: alpine
+os-name: AlpineLinux
+os-arch: x86_64
+os-vers: 3.16.2
+os-ncpu: 2
+os-libc: musl

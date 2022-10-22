@@ -1,0 +1,2 @@
+#!/bin/sh
+exec "/opt/ppkg/installed/gnupg/bin/gpg-wks-client" "$@"
