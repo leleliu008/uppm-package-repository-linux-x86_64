@@ -23,15 +23,17 @@ jobs:
       - run: |
           for PKG_NAME in $PKG_NAMES
           do
-            if [    -d /opt/ppkg/installed/$PKG_NAME/bin ] || [ -d /opt/ppkg/installed/$PKG_NAME/sbin ] ; then
+            if [     -d /opt/ppkg/installed/$PKG_NAME/bin ] || [ -d /opt/ppkg/installed/$PKG_NAME/sbin ] ; then
                 if [ -d /opt/ppkg/installed/$PKG_NAME/include ] ; then
-                  rm -rf /opt/ppkg/installed/$PKG_NAME/include
-                  sed -i '/|include/d'/opt/ppkg/installed/$PKG_NAME/.ppkg/manifest.txt
+                    rm -rf               /opt/ppkg/installed/$PKG_NAME/include
+                    sed -i '/|include/d' /opt/ppkg/installed/$PKG_NAME/.ppkg/manifest.txt
                 fi
+
                 if [ -d /opt/ppkg/installed/$PKG_NAME/lib ] ; then
-                  rm -rf /opt/ppkg/installed/$PKG_NAME/lib
-                  sed -i '/|lib/d'/opt/ppkg/installed/$PKG_NAME/.ppkg/manifest.txt
+                    rm -rf           /opt/ppkg/installed/$PKG_NAME/lib
+                    sed -i '/|lib/d' /opt/ppkg/installed/$PKG_NAME/.ppkg/manifest.txt
                 fi
+
                ./ppkg pack $PKG_NAME
             fi
           done
