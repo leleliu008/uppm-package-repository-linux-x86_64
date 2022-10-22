@@ -1,0 +1,11 @@
+prefix=/home/leleliu008/.ppkg/install.d/util-linux
+exec_prefix=/home/leleliu008/.ppkg/install.d/util-linux
+libdir=/home/leleliu008/.ppkg/install.d/util-linux/lib
+includedir=/home/leleliu008/.ppkg/install.d/util-linux/include
+
+Name: fdisk
+Description: fdisk library
+Version: 2.38.0
+Requires.private: uuid blkid
+Cflags: -I${includedir}/libfdisk
+Libs: -L${libdir} -lfdisk

@@ -1,0 +1,11 @@
+prefix=/home/leleliu008/.ppkg/install.d/bzip2
+exec_prefix=\${prefix}
+libdir=\${exec_prefix}/lib
+includedir=\${prefix}/include
+
+Name: libbz2
+URL: https://sourceware.org/bzip2
+Description: Burrows–Wheeler-based data compression library and utilities with high compression ratio
+Version: 1.0.8
+Libs: -L\${libdir} -lbz2
+Cflags: -I\${includedir}
