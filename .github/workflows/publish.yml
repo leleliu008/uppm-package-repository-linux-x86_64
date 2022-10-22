@@ -47,7 +47,7 @@ jobs:
 
       - run:  ./test.sh
 
-      - run: git add .
+      - run: git add package
       - run: git commit -m "new release"
       - run: git push origin master
 
