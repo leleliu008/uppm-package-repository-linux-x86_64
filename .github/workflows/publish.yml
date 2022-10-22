@@ -31,6 +31,7 @@ jobs:
             fi
           done
 
+      - run: git config --global --add safe.directory /__w/uppm-package-repository-linux-x86_64/uppm-package-repository-linux-x86_64
       - run: git config --global user.name  leleliu008
       - run: git config --global user.email leleliu008@gmail.com
 
