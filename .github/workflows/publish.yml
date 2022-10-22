@@ -12,7 +12,7 @@ jobs:
     env:
       ACLOCAL_PATH: /usr/share/aclocal
       RELEASE_TOKEN: ${{ secrets.RELEASE_TOKEN }}
-      PKG_NAMES: zip
+      PKG_NAMES: gh
       #PKG_NAMES: aria2 axel bash bat bison bmake bzip2 cmake coreutils cppcheck ctop curlie curl darkhttpd diffutils dos2unix ed file findutils flex gawk git glow gm4 gmake gnupg gh gn gogs gotop gotty gperf grep gsed gtar gzip hugo jq lazygit libarchive lzip lz4 mediainfo mosh mpg123 nasm ninja openssl patchelf patch pkg-config pngquant proot putty pigz qpdf quickjs rsync rtmpdump sqlite starship strace tcpdump tealdeer tig tmux tree uctags unrar unzip uppm util-linux wget xmake xxd xz yasm youtubedr yq zopfli zip p7zip zstd
 
     steps:
@@ -24,9 +24,15 @@ jobs:
       - run: |
           for PKG_NAME in $PKG_NAMES
           do
-            if [ -d /opt/ppkg/installed/$PKG_NAME/bin ] ||       [ -d /opt/ppkg/installed/$PKG_NAME/sbin ] ; then
-               [ -d /opt/ppkg/installed/$PKG_NAME/include ] && rm -rf /opt/ppkg/installed/$PKG_NAME/include
-               [ -d /opt/ppkg/installed/$PKG_NAME/lib ]     && rm -rf /opt/ppkg/installed/$PKG_NAME/lib
+            if [    -d /opt/ppkg/installed/$PKG_NAME/bin ] || [ -d /opt/ppkg/installed/$PKG_NAME/sbin ] ; then
+                if [ -d /opt/ppkg/installed/$PKG_NAME/include ] ; then
+                  rm -rf /opt/ppkg/installed/$PKG_NAME/include
+                  sed -i '/|include/d'/opt/ppkg/installed/$PKG_NAME/.ppkg/manifest.txt
+                fi
+                if [ -d /opt/ppkg/installed/$PKG_NAME/lib ] ; then
+                  rm -rf /opt/ppkg/installed/$PKG_NAME/lib
+                  sed -i '/|lib/d'/opt/ppkg/installed/$PKG_NAME/.ppkg/manifest.txt
+                fi
                ./ppkg pack $PKG_NAME
             fi
           done
