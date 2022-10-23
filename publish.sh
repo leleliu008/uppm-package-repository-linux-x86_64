@@ -74,12 +74,12 @@ run cd "$(dirname "$0")"
 run pwd
 
 
-if [ -d ppkg-formula-repository/.git ] ; then
-    cd  ppkg-formula-repository
+if [ -d ppkg-formula-repository-offical-core/.git ] ; then
+    cd  ppkg-formula-repository-offical-core
     gh repo sync
     cd -
 else
-    gh repo clone leleliu008/ppkg-formula-repository
+    gh repo clone leleliu008/ppkg-formula-repository-offical-core
 fi
 
 if [ -d uppm-formula-repository-linux-x86_64/.git ] ; then
@@ -109,7 +109,7 @@ do
     unset PACKAGE_VERSION
     unset PACKAGE_BIN_URL
     unset PACKAGE_BIN_SHA
-    unset PACKAGE_WEBPAGE
+    unset PACKAGE_WEB_URL
 
     PACKAGE_NAME=$(printf '%s\n' "${filename%-linux-x86_64.tar.xz}" | sed 's|\(.*\)-\(.*\)|\1|')
 
@@ -120,28 +120,22 @@ do
     PACKAGE_BIN_URL="https://github.com/leleliu008/uppm-package-repository-linux-x86_64/releases/download/${RELEASE_VERSION}/${filename}"
 
     UPPM_PACKAGE_FORMULA_FILEPATH="uppm-formula-repository-linux-x86_64/formula/$PACKAGE_NAME.yml"
+    PPKG_PACKAGE_FORMULA_FILEPATH="ppkg-formula-repository-offical-core/formula/$PACKAGE_NAME.yml"
 
-    if [ -f "$UPPM_PACKAGE_FORMULA_FILEPATH" ] ; then
-        sed_in_place "/version: /c version: $PACKAGE_VERSION" "$UPPM_PACKAGE_FORMULA_FILEPATH"
-        sed_in_place "/bin-url: /c bin-url: $PACKAGE_BIN_URL" "$UPPM_PACKAGE_FORMULA_FILEPATH"
-        sed_in_place "/bin-sha: /c bin-sha: $PACKAGE_BIN_SHA" "$UPPM_PACKAGE_FORMULA_FILEPATH"
-    else
-        PPKG_PACKAGE_FORMULA_FILEPATH="ppkg-formula-repository/formula/$PACKAGE_NAME.yml"
+    PACKAGE_SUMMARY=$(sed -n '/^summary: /p' "$PPKG_PACKAGE_FORMULA_FILEPATH" | cut -c10-)
 
-        PACKAGE_SUMMARY=$(sed -n '/^summary: /p' "$PPKG_PACKAGE_FORMULA_FILEPATH" | cut -c10-)
-        PACKAGE_WEBPAGE=$(sed -n '/^webpage: /p' "$PPKG_PACKAGE_FORMULA_FILEPATH" | cut -c10-)
+    PACKAGE_WEB_URL=$(sed -n '/^web-url: /p' "$PPKG_PACKAGE_FORMULA_FILEPATH" | cut -c10-)
 
-        [ -z "$PACKAGE_WEBPAGE" ] &&
-        PACKAGE_WEBPAGE=$(sed -n '/^git-url: /p' "$PPKG_PACKAGE_FORMULA_FILEPATH" | cut -c10-)
+    [ -z "$PACKAGE_WEB_URL" ] &&
+    PACKAGE_WEB_URL=$(sed -n '/^git-url: /p' "$PPKG_PACKAGE_FORMULA_FILEPATH" | cut -c10-)
 
-        cat > "$UPPM_PACKAGE_FORMULA_FILEPATH" <<EOF
+    cat > "$UPPM_PACKAGE_FORMULA_FILEPATH" <<EOF
 summary: $PACKAGE_SUMMARY
-webpage: $PACKAGE_WEBPAGE
+webpage: $PACKAGE_WEB_URL
 version: $PACKAGE_VERSION
 bin-url: $PACKAGE_BIN_URL
 bin-sha: $PACKAGE_BIN_SHA
 EOF
-    fi
 
     printf '|%s|%s|\n' "$PACKAGE_BIN_SHA" "$filename" >> "$RELEASE_NOTES_FILE"
 done
