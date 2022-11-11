@@ -12,7 +12,7 @@ jobs:
     env:
       ACLOCAL_PATH: /usr/share/aclocal
       RELEASE_TOKEN: ${{ secrets.RELEASE_TOKEN }}
-      PKG_NAMES: aria2 axel bash bat bison bmake bzip2 cmake coreutils cppcheck ctop curlie curl darkhttpd diffutils dos2unix ed file findutils flex gawk git glow gm4 gmake gnupg gh gn gogs gotop gotty gperf grep gsed gtar gzip hugo jq lazygit libarchive lzip lz4 mediainfo mosh mpg123 nasm ninja openssl patchelf patch pkg-config pngquant proot putty pigz qpdf quickjs rsync rtmpdump sqlite starship strace tcpdump tealdeer tig tmux tree uctags unrar unzip uppm util-linux wget xmake xxd xz yasm youtubedr yq zopfli zip p7zip zstd
+      PKG_NAMES: aria2 axel bash bat bison bmake bzip2 cmake coreutils cppcheck ctop curlie curl darkhttpd diffutils dos2unix ed file findutils flex gawk git glow gm4 gmake gnupg gh gn gogs gotop gotty gperf grep gsed gtar gzip hugo jq lazygit libarchive lzip lz4 mediainfo mosh mpg123 nasm ninja nushell openssl patchelf patch pkg-config pngquant proot putty pigz qpdf quickjs rsync rtmpdump sqlite starship strace tcpdump tealdeer tig tmux tree uctags unrar unzip uppm util-linux volta wget xmake xxd xz yasm youtubedr yq zopfli zip p7zip zstd
 
     steps:
       - run: wget https://raw.githubusercontent.com/leleliu008/ppkg/master/bin/ppkg
