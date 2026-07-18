@@ -1,0 +1,5 @@
+summary: A command-line tool to manipulate ELF files
+webpage: https://github.com/leleliu008/elftool
+version: 2026.07.18
+bin-url: https://github.com/leleliu008/ppkg-package-manually-build/releases/download/elftool-2026.07.18-linux-x86_64.release.tar.xz/elftool-2026.07.18-linux-x86_64.release.tar.xz
+bin-sha: 26c97dd8e30f8d24e5b61293944434a23986227e54472744a19e474c4d9976e3
