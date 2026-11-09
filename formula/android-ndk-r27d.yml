@@ -1,5 +1,5 @@
-summary: a toolset that lets you implement parts of your Android app in native code
+summary: A toolset that lets you implement parts of your Android app in native code
 webpage: https://developer.android.com/ndk
-version: r27d
 bin-url: https://dl.google.com/android/repository/android-ndk-r27d-linux.zip
 bin-sha: 601246087a682d1944e1e16dd85bc6e49560fe8b6d61255be2829178c8ed15d9
+version: r27d
